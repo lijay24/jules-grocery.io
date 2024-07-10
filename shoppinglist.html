@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="shoppinglist.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./images/logo.svg">
+        <nav class="navbar">
+                <a href="#" class="active">Home</a>
+                 <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#"><i class='bx bxs-heart' style="color: #ea00b7;" ></i></a>
+                <a href="shoppinglist.html"><i class='bx bx-cart-add' style='color:#ea00b7'  ></i></a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search groceries">
+            <P class="text">Shopping Cart</P>
+        </div>
+        <table class="shopping-cart">
+            <thead>
+                <tr>
+                    <th>Product Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <tr class="cart-item">
+                    <td class="product-description">
+                        <img src="./images/milo.svg" alt="Milo">
+                        <span>Milo refill 800g</span>
+                        <button class="delete-btn"><i class="fa-solid fa-trash-arrow-up"></i></button>
+                    </td>
+                    <td class="price">NGN 3,200</td>
+                    <td class="quantity">
+                        <button class="decrease-btn">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button class="increase-btn">+</button>
+                    </td>
+                    <td class="total">NGN 3,200</td>
+                </tr>
+                <tr class="cart-item">
+                    <td class="product-description">
+                        <img src="./images/peakmilk.svg" alt="Milk">
+                        <span>Creame Milk 2kg</span>
+                        <button class="delete-btn"><i class="fa-solid fa-trash-arrow-up"></i></button>
+                    </td>
+                    <td class="price">NGN 5, 400</td>
+                    <td class="quantity">
+                        <button class="decrease-btn">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button class="increase-btn">+</button>
+                    </td>
+                    <td class="total">NGN 5,400</td>
+                </tr>
+                <tr class="cart-item">
+                    <td class="product-description">
+                        <img src="./images/cabbage.svg" alt="cabbage">
+                        <span>Cabbage   3kg</span>
+                        <button class="delete-btn"><i class="fa-solid fa-trash-arrow-up"></i></button>
+                    </td>
+                    <td class="price">NGN 1000</td>
+                    <td class="quantity">
+                        <button class="decrease-btn">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button class="increase-btn">+</button>
+                    </td>
+                    <td class="total">NGN 1000</td>
+                </tr>
+                <tr class="cart-item">
+                    <td class="product-description">
+                        <img src="./images/spag.svg" alt="Milo Refill">
+                        <span>Spaghetti  2kg</span>
+                        <button class="delete-btn"><i class="fa-solid fa-trash-arrow-up"></i></button>
+                    </td>
+                    <td class="price">NGN 950</td>
+                    <td class="quantity">
+                        <button class="decrease-btn">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button class="increase-btn">+</button>
+                    </td>
+                    <td class="total">NGN 950</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="textarea">
+            <h3>Add a note to your order</h3>
+            <form action="#">
+                <textarea name="order" id="" rows="5" cols="20" style="border: 1px solid black;">Enter your note</textarea>
+            </form>
+        </div>
+        <div class="grand-total">
+            <h3>Grand Total: <span id="grand-total">NGN 3,200</span></h3>
+            <button id="checkout-btn" class="checkout-btn">Check Out</button>
+        </div>
+        <div class="order-summary-section hidden" id="order-summary-section">
+        <div class="checkout-section">
+            <div class="checkout-form">
+                <h2>Check Out</h2>
+                <form>
+                    <label for="address">House Address</label>
+                    <input type="text" id="address" placeholder="Enter house address">
+                    
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="Enter city">
+                    
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" placeholder="Enter phone number">
+                </form>
+                <div class="delivery-fee">
+                    <h3>Delivery Fee: <span>NGN 1,550</span></h3>
+                </div>
+            </div>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <ul id="order-items">
+                    <li class="order-item">
+                        Milo Refill 800g <span>NGN 3,200</span>
+                    </li>
+                    <!-- Duplicate the above block for more items -->
+                </ul>
+                <div class="summary-totals">
+                    <p>Subtotal: <span id="subtotal">NGN 16,000</span></p>
+                    <p>Delivery fee: <span id="delivery-fee">NGN 1,550</span></p>
+                    <p>Total: <span id="total">NGN 17,550</span></p>
+                </div>
+                <button class="complete-order-btn">Complete Order</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+              <a href="#"><img src="./images/logo.svg"></a>
+              <div class="footer-social">
+              <a href="#"><i class='bx bxs-envelope'></i></a>
+              <a href="#"><i class='bx bxl-instagram' style='color:#fff7fc' ></i></a>
+              <a href="#"><i class='bx bxl-twitter' style='color:#ebd9e5' ></i></a>
+              <a href="#"><i class='bx bxl-facebook-circle' style='color:#ddd6db' ></i></a>
+              <a href="#"><i class='bx bxl-youtube' style='color:#b79eaf'  ></i></a>
+            </div>
+            </div>
+            <div class="footer-links">
+                <strong>Legal</strong>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <strong>Company</strong>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <strong>Download Jules Grocies
+                    Mobile App</strong>
+                <div class="downnload-btn">
+            <a href="#"><img src="./images/img1.png" alt="apple"></a>
+            <a href="#"><img src="./images/img2.png" alt="google"></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="footerdiv">© 2024. Jules Groceries All rights rerseved</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
