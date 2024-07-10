@@ -1,19 +1,5 @@
-
 {
-  "version": 2,
-  "builds": [
-    { "src": "home.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/home.html" }
-  ]
-}
-{
-  "version": 2,
-  "builds": [
-    { "src": "shoppinglist.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/shoppinglist.html" }
+  "rewrites" : [
+    {"source" : "/ (.*)" , "destination" : "/"}
   ]
 }
